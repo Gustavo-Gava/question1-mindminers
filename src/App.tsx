@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 function App() {
 	return (
-		<div className="flex w-full gap-8">
+		<div className="m-auto flex w-full justify-center gap-8">
 			<RecentProjects />
 
 			<Questionnaires />
