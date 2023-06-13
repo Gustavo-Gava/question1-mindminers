@@ -2,4 +2,4 @@
 
 ## Link do preview do projeto
 
-[Preview]()
+[Preview](https://question1-mindminers-gustavo-gava.vercel.app/)
