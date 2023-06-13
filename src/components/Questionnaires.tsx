@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import { toast } from "react-toastify";
 
 const questionnaires = [
 	{
@@ -38,15 +39,19 @@ const questionnaires = [
 ];
 
 export const Questionnaires = () => {
+	function handleSelectQuestionnaire() {
+		toast.success("Questionário selecionado com sucesso!");
+	}
+
 	return (
-		<div className="max-w-sm bg-white rounded flex flex-col flex-1">
-			<h3 className="text-left text-blue-500 text-sm font-semibold px-4 py-2">
+		<div className="flex max-w-sm flex-1 flex-col rounded bg-white">
+			<h3 className="px-4 py-2 text-left text-sm font-semibold text-blue-500">
 				QUESTIONÁRIOS PRONTOS PARA USO
 			</h3>
 
-			<div className="w-full h-[1px] bg-slate-200" />
+			<div className="h-[1px] w-full bg-slate-200" />
 
-			<div className="px-4 h-full">
+			<div className="h-full px-4">
 				<Swiper
 					className="h-full"
 					modules={[Navigation, Pagination]}
@@ -55,16 +60,19 @@ export const Questionnaires = () => {
 				>
 					{questionnaires.map((questionnaire) => (
 						<SwiperSlide className="h-full" key={questionnaire.id}>
-							<div className="flex flex-col justify-between gap-8 p-4 px-8 h-full">
-								<p className="text-slate-500 text-sm">SATISFAÇÃO E EXPERIÊNCIA DO CLIENTE</p>
+							<div className="flex h-full flex-col justify-between gap-8 p-4 px-8">
+								<p className="text-sm text-slate-500">SATISFAÇÃO E EXPERIÊNCIA DO CLIENTE</p>
 
-								<p className="font-bold text-2xl">{questionnaire.clientSatisfaction}</p>
+								<p className="text-2xl font-bold">{questionnaire.clientSatisfaction}</p>
 
-								<p className="text-slate-500 text-sm">{questionnaire.description}</p>
+								<p className="text-sm text-slate-500">{questionnaire.description}</p>
 
-								<a className="bg-blue-500 text-white rounded px-4 py-2 w-fit m-auto">
+								<button
+									onClick={handleSelectQuestionnaire}
+									className="m-auto w-fit rounded bg-blue-500 px-4 py-2 text-white"
+								>
 									Escolher Questionário
-								</a>
+								</button>
 							</div>
 						</SwiperSlide>
 					))}
