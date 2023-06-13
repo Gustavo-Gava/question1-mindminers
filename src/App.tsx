@@ -1,8 +1,9 @@
-import "./App.css";
-import { RecentProjects } from "./components/RecentProjects";
-import { Questionnaires } from "./components/Questionnaires";
-
 import { ToastContainer } from "react-toastify";
+
+import { RecentProjects } from "./features/RecentProjects";
+import { Questionnaires } from "./features/Questionnaires";
+
+import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
