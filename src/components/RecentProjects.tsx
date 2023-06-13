@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BsBriefcaseFill, BsFillPlusCircleFill } from "react-icons/bs";
 
 interface Project {
 	id: number;
@@ -58,16 +59,16 @@ export const RecentProjects = () => {
 	};
 
 	return (
-		<div className="bg-white p-4 rounded flex flex-col gap-4 max-w-3xl flex-1">
+		<div className="flex max-w-3xl flex-1 flex-col gap-4 rounded bg-white p-4">
 			<h3 className="text-left text-slate-400">PROJETOS RECENTES</h3>
 
 			<div className="flex flex-col gap-4">
 				{projects?.map((project) => (
-					<div className="flex flex-col w-full" key={project.id}>
-						<div className="flex items-center justify-between gap-2 p-2 border-[1px] border-slate-300 rounded">
+					<div className="flex w-full flex-col" key={project.id}>
+						<div className="flex items-center justify-between gap-2 rounded border-[1px] border-slate-300 p-2">
 							<p>{project.status}</p>
 
-							<div className="flex gap-2 items-center">
+							<div className="flex items-center gap-2">
 								<p>{project.someInformation}</p>
 								<button onClick={() => handleDeleteProject(project.id)} className="text-red-600">
 									Deletar
@@ -75,21 +76,23 @@ export const RecentProjects = () => {
 							</div>
 						</div>
 
-						<p className="text-left text-sm mt-2">Título do projeto</p>
-						<h4 className="text-left font-semibold mt-1">{project.title}</h4>
+						<p className="mt-2 text-left text-sm">Título do projeto</p>
+						<h4 className="mt-1 text-left font-semibold">{project.title}</h4>
 					</div>
 				))}
 			</div>
 
-			<footer className="flex justify-center items-center gap-4">
-				<button className="px-4 py-2 text-blue-500 border-blue-500 border-[1px] rounded">
+			<footer className="flex items-center justify-center gap-4">
+				<button className="flex items-center gap-2 rounded border-[1px] border-blue-500 px-4 py-2 text-blue-500">
+					<BsBriefcaseFill size={22} />
 					Ver projetos
 				</button>
 
 				<button
 					onClick={handleAddMockedProject}
-					className="px-4 py-2 bg-blue-500 text-white rounded border-[1px] border-blue-500"
+					className="flex items-center gap-2 rounded border-[1px] border-blue-500 bg-blue-500 px-4 py-2 text-white"
 				>
+					<BsFillPlusCircleFill size={22} />
 					Novo Projeto
 				</button>
 			</footer>

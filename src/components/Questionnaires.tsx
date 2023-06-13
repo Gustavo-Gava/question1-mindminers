@@ -1,6 +1,8 @@
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import { BsFillPlusCircleFill } from "react-icons/bs";
+
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -69,7 +71,7 @@ export const Questionnaires = () => {
 
 								<button
 									onClick={handleSelectQuestionnaire}
-									className="m-auto w-fit rounded bg-blue-500 px-4 py-2 text-white"
+									className="m-auto flex w-fit items-center gap-2 rounded bg-blue-500 px-4 py-2 text-white"
 								>
 									Escolher Questionário
 								</button>
