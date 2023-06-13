@@ -3,7 +3,7 @@ import { ToastContainer } from "react-toastify";
 import { RecentProjects } from "./features/RecentProjects";
 import { Questionnaires } from "./features/Questionnaires";
 
-import "./App.css";
+import "./styles/App.css";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
